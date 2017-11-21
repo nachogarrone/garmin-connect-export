@@ -42,6 +42,11 @@ optional arguments:
                         the file and removes the ZIP file
 ```
 
+Cron
+Run script every day at noon
+`crontab -e`
+`0 12 * * * /path/to/file/gcexport.py -d . -c 15 -f original -u --username <username> --password <password> -d /pat/to/fit/files/`
+
 Examples:
 `python gcexport.py --count all` will download all of your data to a dated directory.
 

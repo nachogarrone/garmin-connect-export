@@ -18,6 +18,8 @@ from os.path import isfile
 from os import mkdir
 from os import remove
 from xml.dom.minidom import parseString
+import glob
+import shutil
 
 import urllib2, cookielib, json
 from fileinput import filename
@@ -320,5 +322,9 @@ while total_downloaded < total_to_download:
 # End while loop for multiple chunks.
 
 csv_file.close()
+
+for filename in glob.iglob(args.directory + '/**Semana**/*.fit'):
+	print(filename)
+	shutil.copy2(filename, args.directory + '/todos/')
 
 print 'Done!'
